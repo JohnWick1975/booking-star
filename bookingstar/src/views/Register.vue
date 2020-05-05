@@ -62,6 +62,10 @@
         methods: {
             add() {
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                    .catch(err => {
+                        this.error.status = true;
+                        this.error.message = err.message;
+                    })
                     .then(cred => {
                         firebase
                             .firestore()

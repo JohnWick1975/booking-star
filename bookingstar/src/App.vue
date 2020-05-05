@@ -1,14 +1,10 @@
 <template>
     <div id="app">
-        <!--<div id="nav">
-          <router-link to="/">Login</router-link> |
-          <router-link to="/register">Register</router-link>
-        </div>-->
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-                </a>
+                <router-link to="/projects" class="navbar-item">
+                    <img class="image is-96x96" src="./assets/bookstar-logo.png" alt="logo">
+                </router-link>
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                    data-target="navbarBasicExample">
@@ -21,11 +17,11 @@
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
                     <a v-if="loggedIn" class="navbar-item">
-                        Projects
+                        <router-link to="/projects">My Projects</router-link>
                     </a>
 
                     <a v-if="loggedIn" class="navbar-item">
-                        Properties
+                        <router-link to="/properties">My Properties</router-link>
                     </a>
                 </div>
 
@@ -71,7 +67,7 @@
         name: 'App',
         data() {
             return {
-            loggedIn: null,
+                loggedIn: null,
             }
         },
         methods: {
@@ -85,7 +81,7 @@
                 const title = this.$route.path;
                 if (title.length > 1) {
                     return title[1].toUpperCase() + title.slice(2);
-                }else{
+                } else {
                     return 'Please login...';
                 }
             }
@@ -106,9 +102,9 @@
       text-align: center;
       color: #2c3e50;
     }*/
-.hero{
-    margin-top: 10px;
-    box-shadow: 0 0 10px -5px rgba(0,0,0,0.75);
-}
+    .hero {
+        margin-top: 10px;
+        box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.75);
+    }
 
 </style>

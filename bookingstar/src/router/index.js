@@ -31,6 +31,31 @@ const routes = [
             requiredAuth: true
         }
     },
+    {
+        path: '/properties',
+        name: 'Properties',
+        component: () => import(/* webpackChunkName: "properties" */ '../views/Properties.vue'),
+        meta: {
+            requiredAuth: true
+        }
+    },
+    {
+        path: '/house/id/:id',
+        name: 'House',
+        component: () => import(/* webpackChunkName: "house" */ '../views/House.vue'),
+        meta: {
+            requiredAuth: true
+        }
+    },
+    {
+        path: '/edit/id/:id',
+        name: 'Edit',
+        component: () => import(/* webpackChunkName: "edit" */ '../views/Edit.vue'),
+        meta: {
+            requiredAuth: true
+        }
+    },
+
 ]
 
 const router = new VueRouter({
